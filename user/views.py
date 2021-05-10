@@ -28,13 +28,13 @@ def register(request):
             ######################### mail system ####################################
             htmly = get_template('user/Email.html')
             d = { 'username': username }
-            subject, from_email, to = 'welcome', 'your_email@gmail.com', email
+            subject, from_email, to = 'Welcome', 'your_email@gmail.com', email
             html_content = htmly.render(d)
             msg = EmailMultiAlternatives(subject, html_content, from_email, [to])
             msg.attach_alternative(html_content, "text/html")
             msg.send()
             ##################################################################
-            messages.success(request, f'Your account has been created ! You are now able to log in')
+            messages.success(request, f'Your account has been created! You can now Log in.')
             return redirect('login')
     else:
         form = UserRegisterForm()
@@ -54,6 +54,6 @@ def Login(request):
             messages.success(request, f' wecome {username} !!')
             return redirect('index')
         else:
-            messages.info(request, f'account done not exit plz sign in')
+            messages.info(request, f'This account does not exist, please Sign Up')
     form = AuthenticationForm()
     return render(request, 'user/login.html', {'form':form, 'title':'log in'})

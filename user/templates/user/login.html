@@ -1,6 +1,7 @@
-{% extends "user/index.html" %}
+{% extends "user/base.html" %}
 {% load crispy_forms_tags %}
-{% block start %}
+{% load static %}
+{% block content %}
 
  <div class="content-section col-md-8 col-md-offset-2">
   <center>
@@ -13,8 +14,8 @@
     <button style="background: black; font-size: 2rem; padding:1%;" class="btn btn-outline-info" type="submit"><span class="glyphicon glyphicon-log-in"></span> &nbsp; login</button>
   </center>
   <br/>
-  <sub style="text-align: left;"><a href="{% url 'register' %}" style="text-decoration: none; color: blue; padding:2%; cursor:pointer; margin-right:2%;">don't have account,sign up</a></sub>
+  <sub style="text-align: left;">Don't have an account? <a href="{% url 'register' %}" style="text-decoration: none; color: blue; cursor:pointer; margin-right:2%;">Sign Up.</a></sub>
   </form>
 </center>
  </div>
-{% endblock start %}
+{% endblock content %}

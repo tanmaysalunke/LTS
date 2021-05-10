@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'user.apps.UserConfig',
     ##crispy_forms
     'crispy_forms',
+    'django.contrib.gis',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,11 +80,18 @@ WSGI_APPLICATION = 'LTS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'NAME': 'LTS',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
+GDAL_LIBRARY_PATH = r'C:\\OSGeo4W64\\bin\\gdal301'
+
+GEOS_LIBRARY_PATH = r'C:\\OSGeo4W64\\bin\\geos_c.dll'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -137,3 +145,5 @@ EMAIL_USE_TLS=True
 EMAIL_HOST_USER="tanmaysalunke4@gmail.com"
 EMAIL_HOST_PASSWORD="44tanmay2000"
 ########################
+
+GOOGLE_MAPS_API_KEY="AIzaSyBBB8HAy-SPKss-z3bgJ-7dazelM1KV1LY"
