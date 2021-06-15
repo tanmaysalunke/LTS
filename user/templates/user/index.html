@@ -53,9 +53,13 @@
   <script src="{% static 'user/js/osmmaps.js' %}"></script>
   <!-- <link rel="stylesheet" href="{% static 'user/css/maps.css' %}"> -->
 
+
+
   <!-- MAPBOX API -->
   <!-- <script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
   <link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' /> -->
+
+
 
 
 </head>
@@ -103,12 +107,11 @@
     <!-- {% block start %} -->
     {% if user.is_authenticated %}
     <center><h1 style="font-size: 1.6em;">Check the current location of your Delivery:</h1></center>
-          <div id="map" style="width: 80%; height: 80%;"></div>
+          <div class="container" id="map" style="width: 80%; height: 80%;"></div>
     {% else %}
     <center><h1>Please Log into your account.</h1></center>
     {% endif %}
     <!-- {% endblock %} -->
   </div>
 </body>
-
 </html>
